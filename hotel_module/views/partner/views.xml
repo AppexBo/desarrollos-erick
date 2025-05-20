@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_form_hotel" model="ir.ui.view">
+            <field name="name">view.partner.form.hotel</field>
+            <field name="model">res.partner</field>
+            <field name="priority" eval="100" />
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <!--<xpath expr="//field[@name='email']" position="after">-->
+                <xpath expr="//group[2]" position="after">
+                    <!--si no esta con group no se visualiza el titulo-->
+                    <group>
+                        <field name="estado_civil_id" invisible="is_company"/>
+                        <field name="nationality_id" invisible="is_company"/>
+                        <field name="profession_id" invisible="is_company"/>
+
+                        <field name="birthday"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

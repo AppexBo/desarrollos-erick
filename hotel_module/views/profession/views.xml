@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_profession_tree" model="ir.ui.view">
+        <field name="name">profession.tree</field>
+        <field name="model">profession</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_profession_form" model="ir.ui.view">
+        <field name="name">profession.form</field>
+        <field name="model">profession</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_profession_directo" model="ir.actions.act_window">
+        <field name="name">Profesión</field>
+        <field name="res_model">profession</field>
+        <field name="view_id" ref="view_profession_tree"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_profession_root" name="Profesión"
+              parent="contacts.menu_contacts"
+              action="action_profession_directo"/>
+</odoo>

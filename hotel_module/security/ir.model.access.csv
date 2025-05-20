@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_estado_civil,estado.civil,model_estado_civil,,1,1,1,1
+access_profession,profession,model_profession,,1,1,1,1

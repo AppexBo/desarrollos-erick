@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_estado_civil_tree" model="ir.ui.view">
+        <field name="name">estado.civil.tree</field>
+        <field name="model">estado.civil</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_estado_civil_form" model="ir.ui.view">
+        <field name="name">estado.civil.form</field>
+        <field name="model">estado.civil</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_estado_civil_directo" model="ir.actions.act_window">
+        <field name="name">Estados Civiles</field>
+        <field name="res_model">estado.civil</field>
+        <field name="view_id" ref="view_estado_civil_tree"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_estado_civil_root" name="Estados Civiles"
+              parent="contacts.menu_contacts"
+              action="action_estado_civil_directo"/>
+</odoo>
