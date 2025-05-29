@@ -5,22 +5,17 @@ import { patch } from "@web/core/utils/patch";
 
 patch(Order.prototype, {
     setup() {
-        try {
-            super.setup(...arguments);
-            console.log("setup() ejecutado");
-            this.changePos(this.pos);
-        } catch (error) {
-            console.error("Error en setup():", error);
-        }
+        super.setup(...arguments);
+        console.log("entra a setup");
+        this.changePos(this.pos);
 	}, 
 
     changePos(pos){
-        debugger
+        console.log("entra a change pos");
         const observer = new MutationObserver(() => {
-            debugger
-            console.log("wtf");
-            this.hide_in_information_finanzas();
-            this.hide_in_information_ordenars();
+            console.log("entra al observer");
+            //this.hide_in_information_finanzas();
+            //this.hide_in_information_ordenars();
         });
         
         observer.observe(document.body, {
