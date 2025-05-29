@@ -17,6 +17,7 @@
         'views/estado_civil/views.xml',
 		'views/profession/views.xml',
 		'views/partner/views.xml',
+		'views/motivo_de_viaje/views.xml',
 
 		'views/crm/views.xml'
 	],
