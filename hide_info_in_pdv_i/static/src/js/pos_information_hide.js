@@ -15,8 +15,8 @@ patch(Order.prototype, {
         console.log("entra a change pos");
         const observer = new MutationObserver(() => {
             console.log("entra al observer");
-            //this.hide_in_information_finanzas();
-            //this.hide_in_information_ordenars();
+            this.hide_in_information_finanzas();
+            this.hide_in_information_ordenars();
         });
         
         observer.observe(document.body, {
