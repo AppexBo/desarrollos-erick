@@ -6,11 +6,11 @@ import { patch } from "@web/core/utils/patch";
 patch(Order.prototype, {
     setup() {
         super.setup(...arguments);
-        debugger
-		this.changePos(this.pos);
+        this.changePos(this.pos);
 	}, 
 
     changePos(pos){
+        debugger
         const observer = new MutationObserver(() => {
             debugger
             console.log("wtf");
