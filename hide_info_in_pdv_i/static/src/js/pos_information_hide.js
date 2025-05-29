@@ -7,10 +7,10 @@ patch(Order.prototype, {
     setup() {
         super.setup(...arguments);
         console.log("entra a setup");
-        this.changePos(this.pos);
+        this.observadorPOS(this.pos);
 	}, 
 
-    changePos(pos){
+    observadorPOS(pos){
         console.log("entra a change pos");
         const observer = new MutationObserver(() => {
             console.log("entra al observer");
