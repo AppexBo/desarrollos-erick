@@ -5,8 +5,13 @@ import { patch } from "@web/core/utils/patch";
 
 patch(Order.prototype, {
     setup() {
-        super.setup(...arguments);
-        this.changePos(this.pos);
+        try {
+            super.setup(...arguments);
+            console.log("setup() ejecutado");
+            this.changePos(this.pos);
+        } catch (error) {
+            console.error("Error en setup():", error);
+        }
 	}, 
 
     changePos(pos){
