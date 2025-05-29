@@ -65,6 +65,18 @@ class CrmLead(models.Model):
         store=True  # Opcional, si necesitas que se guarde en la BD para búsquedas
     )
 
+    motivo_de_viaje_id = fields.Many2one(
+        "motivo.de.viaje", 
+        string="Motivo de Viaje", 
+        store=True,
+    )
+
+    state_city_id = fields.Many2one(
+        'res.country.state',
+        string='Procedencia',
+        store=True,
+    )
+
     @api.depends('partner_id.is_company')
     def _compute_is_company(self):
         for lead in self:

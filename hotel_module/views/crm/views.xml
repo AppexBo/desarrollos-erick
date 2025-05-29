@@ -18,6 +18,8 @@
                         <field name="nationality_id" invisible="is_company"/>
                         <field name="profession_id" invisible="is_company"/>            
                         <field name="company_partner_id" invisible="is_company"/>
+                        <field name="motivo_de_viaje_id" invisible="is_company"/>
+                        <field name="state_city_id" invisible="is_company"/>
                     </group>
                 </xpath>
             </field>
