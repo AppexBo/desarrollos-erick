@@ -6,6 +6,7 @@ import { patch } from "@web/core/utils/patch";
 patch(Order.prototype, {
     setup() {
         super.setup(...arguments);
+        debugger
 		this.changePos(this.pos);
 	}, 
 
