@@ -7,6 +7,7 @@ patch(Order.prototype, {
     setup() {
         super.setup(...arguments);
         console.log("entra a setup");
+        debugger
         this.observadorPOS(this.pos);
 	}, 
 
