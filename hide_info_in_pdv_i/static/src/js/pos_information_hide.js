@@ -10,7 +10,8 @@ patch(Order.prototype, {
 	}, 
 
     changePos(pos){
-        const observer = new MutationObserver(() => {            
+        const observer = new MutationObserver(() => {
+            debugger
             this.hide_in_information_finanzas();
             this.hide_in_information_ordenars();
         });
