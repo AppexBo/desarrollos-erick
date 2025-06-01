@@ -9,7 +9,7 @@ class PosOrderLine(models.Model):
 
     # Campos calculados que vamos a mostrar en la vista
     sucursal_rep = fields.Char(string='Sucursal', compute='_compute_order_values', store=True)
-    order_rep = fields.Char(string='Ref de Order', compute='_compute_order_values', store=True)
+    order_rep = fields.Many2one('pos.order', string='Ref de Order', compute='_compute_order_values', store=True)
     numero_de_orden_rep = fields.Char(string='Numero de orden', compute='_compute_order_values', store=True)
     numero_de_factura_rep = fields.Char(string='Numero de factura', compute='_compute_order_values', store=True)
     creado_en_rep = fields.Char(string='Creado en', compute='_compute_order_values', store=True)
@@ -46,7 +46,7 @@ class PosOrderLine(models.Model):
         for line in self:
             # Aquí calculamos los valores de los campos a, b, c y v
             line.sucursal_rep = line.order_id.config_id.name
-            line.order_rep = line.order_id.name
+            line.order_rep = line.order_id.id
             line.numero_de_orden_rep = line.order_id.tracking_number
             line.numero_de_factura_rep = line.order_id.account_move.name
             line.creado_en_rep = line.create_date
