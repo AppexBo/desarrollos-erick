@@ -7,7 +7,7 @@
         <field name="arch" type="xml"> 
             <tree string="Reporte de Ventas" create="false"> 
                 <field name="payment_date"/>
-                <field name="payment_metod_id"/>
+                <field name="payment_method_id"/>
             </tree> 
         </field> 
     </record> 
@@ -18,7 +18,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="payment_date"/>
-                <field name="payment_metod_id"/>
+                <field name="payment_method_id"/>
             </search>
         </field>
     </record>
