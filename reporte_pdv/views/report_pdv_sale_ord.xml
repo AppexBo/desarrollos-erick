@@ -22,7 +22,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="payment_date"/>
-                <field name="payment_method_name"/>
+                <field name="payment_method_name" string="Pago"/>
                 <field name="amount"/>
                 <field name="pos_order_id"/>
                 <field name="cashier_id"/>
