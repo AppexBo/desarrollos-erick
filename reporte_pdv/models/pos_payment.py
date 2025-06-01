@@ -7,7 +7,7 @@ class PosPayment(models.Model):
     cashier_id = fields.Many2one(
         'res.users',
         string='Cajero',
-        related='session_id.user_id',
+        related='pos_order_id.employee_id',
         readonly=True,
         store=False
     )
