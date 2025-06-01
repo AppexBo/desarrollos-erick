@@ -6,7 +6,7 @@
         <field name="model">account.payment</field> 
         <field name="arch" type="xml"> 
             <tree string="Reporte de Ventas" create="false"> 
-                <field name="pos_order_id.config_id" string="Sucursal"/>
+                <field name="pos_order_id"/>
                 
             </tree> 
         </field> 
@@ -17,7 +17,7 @@
         <field name="model">account.payment</field>
         <field name="arch" type="xml">
             <search>
-                <field name="pos_order_id.config_id"/>
+                <field name="pos_order_id"/>
             </search>
         </field>
     </record>
