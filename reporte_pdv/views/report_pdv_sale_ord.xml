@@ -7,7 +7,7 @@
         <field name="arch" type="xml"> 
             <tree string="Reporte de Ventas" create="false"> 
                 <field name="payment_date"/>
-                
+                <field name="payment_metod_id"/>
             </tree> 
         </field> 
     </record> 
@@ -18,6 +18,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="payment_date"/>
+                <field name="payment_metod_id"/>
             </search>
         </field>
     </record>
@@ -31,7 +32,7 @@
     </record> 
     <!-- Vista para el reporte en forma de lista -->
     <menuitem id="menu_reporte_pdv_sale_ord"  
-        name="Reporte de Ventas"  
+        name="Reporte de Ventas Ord"  
         parent="point_of_sale.menu_point_rep"  
         action="action_menu_reporte_pdv_sale_ord"  
         sequence="11"  
