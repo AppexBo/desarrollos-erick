@@ -6,11 +6,11 @@
         <field name="model">pos.payment</field> 
         <field name="arch" type="xml"> 
             <tree string="Reporte de Ventas" create="false"> 
-                <field name="pos_order_id" widget="many2one_clickable"/>
+                <field name="pos_order_id" widget="many2one_clickable" string="Ref de Orden"/>
                 <field name="payment_date"/>
                 <field name="payment_method_id"/>
-                <field name="amount"/>
-                
+                <field name="amount" string="Total"/>
+
             </tree> 
         </field> 
     </record> 
