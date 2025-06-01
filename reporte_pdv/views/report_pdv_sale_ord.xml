@@ -7,7 +7,7 @@
         <field name="arch" type="xml"> 
             <tree string="Reporte de Ventas" create="false"> 
                 <field name="sucursal_rep"/>
-                 
+                <field name="order_rep" widget="many2one_clickable"/>
             </tree> 
         </field> 
     </record> 
@@ -18,7 +18,8 @@
         <field name="arch" type="xml">
             <search>
                 <field name="sucursal_rep"/>
-                
+                <field name="order_rep" widget="many2one_clickable"/>
+                <field name="numero_de_orden_rep"/>
             </search>
         </field>
     </record>
