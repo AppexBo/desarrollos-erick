@@ -13,7 +13,6 @@ class PosPayment(models.Model):
     )
 
     payment_method_name = fields.Char(
-        'pos.payment',
         string='Método de pago',
         related='payment_method_id.name',
         readonly=True,
