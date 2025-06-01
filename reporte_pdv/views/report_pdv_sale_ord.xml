@@ -6,7 +6,10 @@
         <field name="model">pos.order</field> 
         <field name="arch" type="xml"> 
             <tree string="Reporte de Ventas" create="false"> 
-                <field name="config_id" widget="many2one_clickable"/>
+                <field name="config_id.name" string="Sucursal"/>
+                <field name="id" string="Ref de Orden" widget="many2one_clickable"/>
+                <field name="tracking_number" string="Numero de orden"/>
+                
             </tree> 
         </field> 
     </record> 
@@ -16,7 +19,9 @@
         <field name="model">pos.order</field>
         <field name="arch" type="xml">
             <search>
-                <field name="config_id" widget="many2one_clickable"/>
+                <field name="config_id.name"/>
+                <field name="id"/>
+                <field name="tracking_number"/>
             </search>
         </field>
     </record>
