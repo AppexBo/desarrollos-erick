@@ -38,6 +38,7 @@ class PosOrderLine(models.Model):
     compute='_compute_order_values',
     store=True
     )
+    nota = fields.Char(string='Nota', compute='_compute_order_values', store=True)
 
 
     @api.depends('qty', 'product_id', 'price_unit', 'tax_ids')  # Dependencias para recalcular cuando cambian ciertos valores
@@ -62,4 +63,5 @@ class PosOrderLine(models.Model):
             line.cajero = line.order_id.cashier
             line.metodo_pago = ', '.join(line.order_id.payment_ids.mapped('payment_method_id.name'))
             line.status = line.order_id.account_move.payment_state
+            line.nota = line.order_id.customer_note
             
