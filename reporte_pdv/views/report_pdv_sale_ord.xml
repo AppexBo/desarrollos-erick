@@ -11,8 +11,7 @@
                 <field name="amount"/>
                 <field name="pos_order_id"/>
                 <field name="create_date"/>
-                <field name="pos_order_id.cashier"/>
-                
+
             </tree> 
         </field> 
     </record> 
@@ -27,7 +26,6 @@
                 <field name="amount"/>
                 <field name="pos_order_id"/>
                 <field name="create_date"/>
-                <field name="pos_order_id.cashier"/>
 
             </search>
         </field>
