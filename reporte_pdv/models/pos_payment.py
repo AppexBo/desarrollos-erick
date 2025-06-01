@@ -5,7 +5,7 @@ class PosPayment(models.Model):
 
     # En tu modelo pos.payment (pos_payment.py)
     cashier_id = fields.Many2one(
-        'res.users',
+        'hr.employee',
         string='Cajero',
         related='pos_order_id.employee_id',
         readonly=True,
