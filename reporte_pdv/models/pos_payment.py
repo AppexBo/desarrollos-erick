@@ -20,4 +20,4 @@ class PosPayment(models.Model):
 
     def _compute_payment_method_name(self):
         for payment in self:
-            payment.payment_method_name = (payment.payment_method_id.name or '').lower()
+            payment.payment_method_name = payment.payment_method_id.name or ''
