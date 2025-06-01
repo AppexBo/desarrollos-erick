@@ -17,6 +17,7 @@
 	"license": "LGPL-3",
 	"data": [
 		#'security/ir.model.access.csv',  # Archivo de permisos
-        'views/report_pdv_sale.xml'
+        'views/report_pdv_sale.xml',
+		'views/report_pdv_sale_ord.xml'
 	],
 }
