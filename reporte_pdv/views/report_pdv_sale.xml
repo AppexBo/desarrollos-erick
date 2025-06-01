@@ -10,7 +10,7 @@
                 <field name="order_rep" widget="many2one_clickable"/>
                 <!--<field name="id" string="Numero"/>-->
                 <field name="numero_de_orden_rep"/>
-                <field name="numero_de_factura_rep"/>
+                <field name="numero_de_factura_rep" widget="many2one_clickable"/>
                 <field name="creado_en_rep"/>
                 <field name="categoria_producto_rep"/>
                 <field name="unidad_de_medida_rep"/>

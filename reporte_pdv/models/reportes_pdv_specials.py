@@ -11,7 +11,7 @@ class PosOrderLine(models.Model):
     sucursal_rep = fields.Char(string='Sucursal', compute='_compute_order_values', store=True)
     order_rep = fields.Many2one('pos.order', string='Ref de Order', compute='_compute_order_values', store=True)
     numero_de_orden_rep = fields.Char(string='Numero de orden', compute='_compute_order_values', store=True)
-    numero_de_factura_rep = fields.Char(string='Numero de factura', compute='_compute_order_values', store=True)
+    numero_de_factura_rep = fields.Many2one('account.move', string='Numero de Factura', compute='_compute_order_values', store=True)
     creado_en_rep = fields.Char(string='Creado en', compute='_compute_order_values', store=True)
     categoria_producto_rep = fields.Char(string='Categoria del Producto', compute='_compute_order_values', store=True)
     unidad_de_medida_rep = fields.Char(string='Unidad de Medida', compute='_compute_order_values', store=True)
@@ -48,7 +48,7 @@ class PosOrderLine(models.Model):
             line.sucursal_rep = line.order_id.config_id.name
             line.order_rep = line.order_id.id
             line.numero_de_orden_rep = line.order_id.tracking_number
-            line.numero_de_factura_rep = line.order_id.account_move.name
+            line.numero_de_factura_rep = line.order_id.account_move.id
             line.creado_en_rep = line.create_date
             line.categoria_producto_rep = line.product_id.categ_id.name
             line.unidad_de_medida_rep = line.product_id.uom_id.name
