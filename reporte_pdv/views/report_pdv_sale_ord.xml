@@ -10,8 +10,8 @@
                 <field name="payment_date"/>
                 <field name="payment_method_id"/>
                 <field name="amount" string="Total"/>
-                <field name="pos_order_id/user_id" string="Cajero"/>
-                
+                <field name="session_id/user_id" string="Cajero"/>
+
             </tree> 
         </field> 
     </record> 
