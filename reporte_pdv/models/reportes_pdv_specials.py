@@ -63,5 +63,5 @@ class PosOrderLine(models.Model):
             line.cajero = line.order_id.cashier
             line.metodo_pago = ', '.join(line.order_id.payment_ids.mapped('payment_method_id.name'))
             line.status = line.order_id.account_move.payment_state
-            line.nota = line.order_id.customer_note
+            line.nota = line.customer_note
             
