@@ -8,6 +8,11 @@
             <tree string="Reporte de Ventas" create="false"> 
                 <field name="payment_date"/>
                 <field name="payment_method_id"/>
+                <field name="amount"/>
+                <field name="pos_order_id"/>
+                <field name="create_date"/>
+                <field name="pos_order_id.cashier"/>
+                
             </tree> 
         </field> 
     </record> 
@@ -19,6 +24,11 @@
             <search>
                 <field name="payment_date"/>
                 <field name="payment_method_id"/>
+                <field name="amount"/>
+                <field name="pos_order_id"/>
+                <field name="create_date"/>
+                <field name="pos_order_id.cashier"/>
+
             </search>
         </field>
     </record>
