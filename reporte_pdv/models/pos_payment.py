@@ -13,11 +13,11 @@ class PosPayment(models.Model):
     )
 
     payment_method_name = fields.Char(
-        string='Método de pago',
+        string='Pago',
         compute='_compute_payment_method_name',
         store=False
     )
 
     def _compute_payment_method_name(self):
         for payment in self:
-            payment.payment_method_name = "asdasd" or ''
+            payment.payment_method_name = payment.payment_method_id.name or ''
