@@ -7,7 +7,7 @@ class CrmLead(models.Model):
         "estado.civil",  # Mismo modelo que en res.partner
         string="Estado Civil",
         compute="_compute_estado_civil",
-        #inverse="_inverse_estado_civil",
+        inverse="_inverse_estado_civil",
         store=True,
         readonly=False,
         tracking=True  # Opcional: para registrar cambios en el chatter
@@ -17,7 +17,7 @@ class CrmLead(models.Model):
         "res.country",
         string="Nacionalidad",
         compute="_compute_nationality",
-        #inverse="_inverse_nationality",
+        inverse="_inverse_nationality",
         store=True,
         readonly=False,
         tracking=True
@@ -27,7 +27,7 @@ class CrmLead(models.Model):
         "profession",
         string="Profesión",
         compute="_compute_profession",
-        #inverse="_inverse_profession",
+        inverse="_inverse_profession",
         store=True,
         readonly=False,
         tracking=True
@@ -102,7 +102,8 @@ class CrmLead(models.Model):
     def _compute_vat(self):
         """Actualiza el número de identificación cuando se selecciona un partner"""
         for lead in self:
-            lead.vat = lead.partner_id.vat
+            if not lead.vat:
+                lead.vat = lead.partner_id.vat
 
     def _inverse_vat(self):
         """Actualiza el número de identificación en el partner cuando se modifica en el CRM"""
@@ -116,7 +117,8 @@ class CrmLead(models.Model):
     def _compute_estado_civil(self):
         """Actualiza el estado civil cuando se selecciona un partner"""
         for lead in self:
-            lead.estado_civil_id = lead.partner_id.estado_civil_id
+            if not lead.estado_civil_id:
+                lead.estado_civil_id = lead.partner_id.estado_civil_id
 
     def _inverse_estado_civil(self):
         """Actualiza el estado civil en el partner cuando se modifica en el CRM"""
@@ -130,7 +132,8 @@ class CrmLead(models.Model):
     def _compute_nationality(self):
         """Actualiza la nacionalidad cuando se selecciona un partner"""
         for lead in self:
-            lead.nationality_id = lead.partner_id.nationality_id
+            if not lead.nationality_id:
+                lead.nationality_id = lead.partner_id.nationality_id
 
     def _inverse_nationality(self):
         """Actualiza la nacionalidad en el partner cuando se modifica en el CRM"""
