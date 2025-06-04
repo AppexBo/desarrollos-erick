@@ -147,12 +147,13 @@ class CrmLead(models.Model):
     def _compute_profession(self):
         """Actualiza la profesión cuando se selecciona un partner"""
         for lead in self:
-            lead.profession_id = lead.partner_id.profession_id
+            if not lead.profession_id:
+                lead.profession_id = lead.partner_id.profession_id
 
-    #def _inverse_profession(self):
-    #    """Actualiza la profesión en el partner cuando se modifica en el CRM"""
-    #    for lead in self:
-    #        if lead.partner_id:
-    #            lead.partner_id.sudo().write({
-    #                'profession_id': lead.profession_id.id
-    #            })
+    def _inverse_profession(self):
+        """Actualiza la profesión en el partner cuando se modifica en el CRM"""
+        for lead in self:
+            if lead.partner_id:
+                lead.partner_id.sudo().write({
+                    'profession_id': lead.profession_id.id
+                })
