@@ -86,7 +86,8 @@ class CrmLead(models.Model):
     def _compute_birthday(self):
         """Actualiza la fecha de cumpleaños cuando se selecciona un partner"""
         for lead in self:
-            lead.birthday = lead.partner_id.birthday
+            if not lead.birthday:
+                lead.birthday = lead.partner_id.birthday
 
     def _inverse_birthday(self):
         """Actualiza la fecha de cumpleaños en el partner cuando se modifica en el CRM"""
