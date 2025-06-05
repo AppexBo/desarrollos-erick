@@ -55,6 +55,7 @@ class CrmLead(models.Model):
         'res.partner',
         string='Empresa/Compañía',
         domain=[('is_company', '=', True)],
+        tracking=True
     )
 
 
@@ -69,12 +70,14 @@ class CrmLead(models.Model):
         "motivo.de.viaje", 
         string="Motivo de Viaje", 
         store=True,
+        tracking=True
     )
 
     state_city_id = fields.Many2one(
         'res.country.state',
         string='Procedencia',
         store=True,
+        tracking=True
     )
 
     @api.depends('partner_id.is_company')
